@@ -16,6 +16,7 @@ Sitecore 9.2.0 XP
 
 1. Build Solution
 1. From ```ExportXConnectDataToTableStorage.Cortex``` project Copy DLLs and config file ```sc.ExportXConnectDataToTableStorage.xml``` to the folder ```\App_Data\jobs\continuous\ProcessingEngine\App_Data\Config\Sitecore\ExportXConnectDataToTableStorage``` in your Cortex Processing Engine root
+1. Download, unpack and copy assembly ["Microsoft.WindowsAzure.Storage" (Version=9.3.2.0)](https://www.nuget.org/packages/WindowsAzure.Storage/9.3.2)
 1. From ```ExportXConnectDataToTableStorage.Sitecore``` project copy dlls, config file to the Sitecore CM instance
 
 ## How to run
