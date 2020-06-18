@@ -5,7 +5,7 @@ namespace XcExport.Cortex.Storage
 {
     public static class AzureStorageTable
     {
-        public const string StorageAccountConnectionString = "DefaultEndpointsProtocol=https;AccountName=ibustatic1;AccountKey=sTqazckdEmOesyhNUoGLSWZNmCLpxRzumRlysxNcg3h166uGRr9+F1FgHBzEABmY2XXrPnBfR+zx9RpU1iroog==;EndpointSuffix=core.windows.net";
+        public const string StorageAccountConnectionString = "DefaultEndpointsProtocol=https;AccountName=accountname;AccountKey=accountkey;EndpointSuffix=core.windows.net";
 
         public const string TableName = "CortexDataStore";
 
