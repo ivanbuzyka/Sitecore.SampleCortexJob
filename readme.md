@@ -24,7 +24,7 @@ Sitecore 9.2.0 XP
 1. Perform Web API request (for example using [Postman](https://www.getpostman.com/))
 
 ```
-http://<hostname>/api/sitecore/Cortex/RegisterExportToAzTableStorage
+http://<hostname>/api/sitecore/Cortex/RegisterContactsExportToJson
 ```
 As a response you will get TaskId:
 
