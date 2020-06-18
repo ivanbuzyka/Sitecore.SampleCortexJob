@@ -1,15 +1,15 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
 using System;
 
-namespace ExportXConnectDataToTableStorage.Cortex.AzureStorage.Model
+namespace XcExport.Cortex.AzureStorage.Model
 {
-    public class IntractionEntity: TableEntity
+    public class InteractionEntity : TableEntity
     {
-        public static string PartitionKey = "CortexInteractions.IntractionEntity";
-        public IntractionEntity(string userAgent, TimeSpan duration, Guid? interactionId, Guid? contactId, DateTime startDateTime, string ipInfo, string city)
+        public static string PartitionKey = "Cortex.InteractionEntity";
+        public InteractionEntity(string userAgent, TimeSpan duration, Guid? interactionId, Guid? contactId, DateTime startDateTime, string ipInfo, string city)
         {
             base.PartitionKey = PartitionKey;
-            base.RowKey = interactionId.ToString();
+            RowKey = interactionId.ToString();
 
             UserAgent = userAgent;
             Duration = duration;
@@ -20,7 +20,7 @@ namespace ExportXConnectDataToTableStorage.Cortex.AzureStorage.Model
             City = city;
         }
 
-        public IntractionEntity() {}
+        public InteractionEntity() { }
 
         public string UserAgent { get; set; }
         public TimeSpan Duration { get; set; }

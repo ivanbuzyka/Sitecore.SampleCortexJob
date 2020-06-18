@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Sitecore>
+    <Processing>
+      <Services>
+        <TaskServicesFactory>
+          <Options>
+            <ExportInteractionsToJson>
+              <Type>XcExport.Cortex.Workers.ExportInteractionsToJson, XcExport.Cortex</Type>
+            </ExportInteractionsToJson>
+            <ExportContactsToJson>
+              <Type>XcExport.Cortex.Workers.ExportContactsToJson, XcExport.Cortex</Type>
+            </ExportContactsToJson>
+            <ExportInteractionsToAzureTable>
+              <Type>XcExport.Cortex.Workers.ExportInteractionsToAzureTable, XcExport.Cortex</Type>
+            </ExportInteractionsToAzureTable>
+            <ExportContactsToAzureTable>
+              <Type>XcExport.Cortex.Workers.ExportContactsToAzureTable, XcExport.Cortex</Type>
+            </ExportContactsToAzureTable>
+          </Options>
+        </TaskServicesFactory>
+      </Services>
+    </Processing>
+  </Sitecore>
+</Settings>

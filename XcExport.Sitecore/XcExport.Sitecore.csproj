@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B7C04A10-B157-45BF-8915-67984268299F}</ProjectGuid>
+    <ProjectGuid>{8DAD8E40-FE79-4244-B8ED-A2D505A3CA24}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExportXConnectDataToTableStorage.Sitecore</RootNamespace>
-    <AssemblyName>ExportXConnectDataToTableStorage.Sitecore</AssemblyName>
+    <RootNamespace>XcExport.Sitecore</RootNamespace>
+    <AssemblyName>XcExport.Sitecore</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -309,6 +309,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\XcExport.Sitecore\XcExport.Sitecore.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -316,9 +317,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\ExportXConnectDataToTableStorage\ExportXConnectDataToTableStorage.config" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -340,9 +339,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61492</DevelopmentServerPort>
+          <DevelopmentServerPort>52757</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44392/</IISUrl>
+          <IISUrl>https://localhost:44352/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
