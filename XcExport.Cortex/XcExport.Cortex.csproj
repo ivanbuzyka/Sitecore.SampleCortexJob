@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Sitecore.Processing.Engine.Abstractions" Version="9.2.0" />
     <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.2.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 

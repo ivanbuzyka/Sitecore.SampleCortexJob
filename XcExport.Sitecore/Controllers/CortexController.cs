@@ -85,6 +85,42 @@ namespace XcExport.Sitecore.Controllers
 
         }
 
+        public async Task<ActionResult> RegisterContactsExportToMsSql()
+        {
+            using (IXdbContext client = SitecoreXConnectClientConfiguration.GetClient())
+            {
+                var interactionFacets = client.Model.Facets.Where(c => c.Target == EntityType.Interaction).Select(x => x.Name);
+                var contactFacets = client.Model.Facets.Where(c => c.Target == EntityType.Contact).Select(x => x.Name);
+
+                var searchRequest = client.Contacts
+                    .Where(c => c.Interactions.Any())
+                    .WithExpandOptions(new ContactExpandOptions(contactFacets.ToArray())
+                    {
+                        Interactions = new RelatedInteractionsExpandOptions(interactionFacets.ToArray())
+                        {
+                            //StartDateTime = DateTime.Now.AddDays(-3),
+                            //EndDateTime = DateTime.Now,
+                            Limit = int.MaxValue
+                        }
+                    })
+                    .GetSearchRequest();
+
+                var dataSourceOptions = new ContactSearchDataSourceOptionsDictionary(searchRequest, 1000, 1000);
+
+                var workerOptions = new Dictionary<string, string>();
+
+                var taskId = await _taskManager.RegisterDistributedTaskAsync(
+                    dataSourceOptions,
+                    new DistributedWorkerOptionsDictionary(
+                        "XcExport.Cortex.Workers.ExportContactsToMsSql, XcExport.Cortex", workerOptions),
+                    null,
+                    TimeSpan.FromHours(1));
+
+                return Json(new { TaskId = taskId.ToString() }, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
         public async Task<ActionResult> RegisterInteractionsExportToAzureTable()
         {
             using (IXdbContext client = SitecoreXConnectClientConfiguration.GetClient())

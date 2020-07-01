@@ -17,6 +17,9 @@
             <ExportContactsToAzureTable>
               <Type>XcExport.Cortex.Workers.ExportContactsToAzureTable, XcExport.Cortex</Type>
             </ExportContactsToAzureTable>
+            <ExportContactsToMsSql>
+              <Type>XcExport.Cortex.Workers.ExportContactsToMsSql, XcExport.Cortex</Type>
+            </ExportContactsToMsSql>
           </Options>
         </TaskServicesFactory>
       </Services>
